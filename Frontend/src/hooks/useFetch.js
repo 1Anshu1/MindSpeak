@@ -8,7 +8,7 @@ const useFetch = (url) => {
 
     useEffect(() => {
         setLoading(true)
-        axios.get(`http://localhost:8000/api/v1${url}`)
+        axios.get(`https://mindspeak.onrender.com/api/v1${url}`)
         .then((res) => {
             setData(res.data)
         })
