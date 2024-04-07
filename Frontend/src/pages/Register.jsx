@@ -63,7 +63,7 @@ const Register = () => {
                             className="border-2 border-gray-400 placeholder-black rounded-md px-2 py-2 outline-none"
                         />
                         <button className=" bg-primaryBlue rounded-md text-white py-2 px-3">Register</button>
-                        <OAuth />
+                        {/* <OAuth /> */}
                     </form>
                     <p className="">
                         Already have an account?

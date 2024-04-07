@@ -126,7 +126,7 @@ const Articles = () => {
                         <select
                             name="category"
                             id="category"
-                            className="border-2 border-gray-400 my-2"
+                            className="border-2 border-gray-400 "
                             value={category}
                             onChange={handleCategory}
                         >
@@ -155,7 +155,9 @@ const Articles = () => {
                     </div>
                 </section>
                 <section className="">
-                    <div className="font-semibold my-5 text-xl text-darkBlue">{posts.length} posts found</div>
+                    {!loading && (
+                        <div className="font-semibold my-5 text-xl text-darkBlue">{posts.length} posts found</div>
+                    )}
                     {loading ? (
                         <div className="flex flex-wrap gap-10">
                             <ArticleCardSkeleton />
@@ -163,7 +165,7 @@ const Articles = () => {
                             <ArticleCardSkeleton />
                         </div>
                     ) : (
-                        <div className="flex justify-center flex-wrap gap-10">
+                        <div className="flex justify-start flex-wrap gap-10">
                             {posts && posts?.map((item) => <ArticleCard key={item._id} post={item} />)}
                         </div>
                     )}

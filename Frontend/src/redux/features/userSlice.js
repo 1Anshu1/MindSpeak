@@ -77,10 +77,12 @@ const userSlice = createSlice({
         // login
         builder.addCase(loginAction.pending, (state) => {
             state.loading = true;
+            state.error = null;
         });
         builder.addCase(loginAction.fulfilled, (state, action) => {
             state.loading = false;
             state.user = action.payload;
+            state.error = null;
         });
         builder.addCase(loginAction.rejected, (state, action) => {
             state.loading = false;

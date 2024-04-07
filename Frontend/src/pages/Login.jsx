@@ -2,9 +2,9 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 
-import Header from "../components/Header";
 import { loginAction } from "../redux/features/userSlice";
 import Layout from "../components/Layout";
+import { toast } from "react-toastify";
 
 const Login = () => {
     const userState = useSelector((state) => state.user);
