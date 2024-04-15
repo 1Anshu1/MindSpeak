@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import defaultProfileImg from "../assets/defaultProfileImg.jpeg";
 
 import Layout from "../components/Layout";
 import { updateAction } from "../redux/features/userSlice";

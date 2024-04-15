@@ -1,6 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { ToastContainer } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+
 
 import HomePage from "./pages/HomePage";
 import ArticleDetail from "./pages/ArticleDetail";
@@ -25,20 +24,6 @@ const App = () => {
         <div className="bg-darkBlue bg-opacity-10">
             <BrowserRouter>
                 <ScrollToTop />
-                <ToastContainer
-                    position="bottom-center"
-                    autoClose={500}
-                    limit={1}
-                    hideProgressBar
-                    newestOnTop={false}
-                    closeOnClick
-                    rtl={false}
-                    pauseOnFocusLoss
-                    draggable
-                    pauseOnHover
-                    theme="colored"
-                    transition:Slide
-                />
                 <Routes>
                     <Route index path="/" element={<HomePage />} />
                     <Route path="/register" element={<Register />} />

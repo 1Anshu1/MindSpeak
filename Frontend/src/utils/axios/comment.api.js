@@ -1,8 +1,9 @@
 import axios from "axios";
+import { BASE_URL } from "../../constants/constants";
 
 const getPostComments = async (postId) => {
     try {
-        const { data } = await axios.get(`https://mindspeak.onrender.com/api/v1/comment/${postId}`);
+        const { data } = await axios.get(`${BASE_URL}/api/v1/comment/${postId}`);
         return data;
     } catch (error) {
         if (error.response && error.response.data.message) {
@@ -15,7 +16,7 @@ const getPostComments = async (postId) => {
 const createComment = async (payload) => {
     const token = JSON.parse(localStorage.getItem("blog-token"));
     try {
-        const { data } = await axios.post(`https://mindspeak.onrender.com/api/v1/comment/`, payload, {
+        const { data } = await axios.post(`${BASE_URL}/api/v1/comment/`, payload, {
             headers: {
                 Authorization: `Bearer ${token}`,
             },
@@ -32,7 +33,7 @@ const createComment = async (payload) => {
 const updatePost = async (slug, payload) => {
     const token = JSON.parse(localStorage.getItem("blog-token"));
     try {
-        const { data } = await axios.patch(`https://mindspeak.onrender.com/api/v1/post/${slug}`, payload, {
+        const { data } = await axios.patch(`${BASE_URL}/api/v1/post/${slug}`, payload, {
             headers: {
                 Authorization: `Bearer ${token}`,
             },
@@ -49,7 +50,7 @@ const updatePost = async (slug, payload) => {
 const deletePost = async (slug) => {
     const token = JSON.parse(localStorage.getItem("blog-token"));
     try {
-        const { data } = await axios.delete(`https://mindspeak.onrender.com/api/v1/post/${slug}`, {
+        const { data } = await axios.delete(`${BASE_URL}/api/v1/post/${slug}`, {
             headers: {
                 Authorization: `Bearer ${token}`,
             },

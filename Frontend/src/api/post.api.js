@@ -1,9 +1,10 @@
 import axios from "axios";
+import { BASE_URL } from "../constants/constants";
 
 const getAllPost = async (url = "", startIndex = 0) => {
     url = url.length > 0 ? `${url}&startIndex=${startIndex}` : `?startIndex=${startIndex}`;
     try {
-        const { data } = await axios.get(`https://mindspeak.onrender.com/api/v1/post${url}`);
+        const { data } = await axios.get(`${BASE_URL}/api/v1/post${url}`);
         return data;
     } catch (error) {
         if (error.response && error.response.data.message) {
@@ -15,7 +16,7 @@ const getAllPost = async (url = "", startIndex = 0) => {
 
 const getPost = async (postId) => {
     try {
-        const { data } = await axios.get(`https://mindspeak.onrender.com/api/v1/post/${postId}`);
+        const { data } = await axios.get(`${BASE_URL}/api/v1/post/${postId}`);
         return data;
     } catch (error) {
         if (error.response && error.response.data.message) {
@@ -28,7 +29,7 @@ const getPost = async (postId) => {
 const createPost = async (payload) => {
     const token = JSON.parse(localStorage.getItem("blog-token"));
     try {
-        const { data } = await axios.post(`https://mindspeak.onrender.com/api/v1/post/`, payload, {
+        const { data } = await axios.post(`${BASE_URL}/api/v1/post/`, payload, {
             headers: {
                 "Content-Type": "multipart/form-data",
                 Authorization: `Bearer ${token}`,
@@ -46,7 +47,7 @@ const createPost = async (payload) => {
 const updatePost = async (postId, payload) => {
     const token = JSON.parse(localStorage.getItem("blog-token"));
     try {
-        const { data } = await axios.patch(`https://mindspeak.onrender.com/api/v1/post/${postId}`, payload, {
+        const { data } = await axios.patch(`${BASE_URL}/api/v1/post/${postId}`, payload, {
             headers: {
                 "Content-Type": "multipart/form-data",
                 Authorization: `Bearer ${token}`,
@@ -64,7 +65,7 @@ const updatePost = async (postId, payload) => {
 const deletePost = async (postId) => {
     const token = JSON.parse(localStorage.getItem("blog-token"));
     try {
-        const { data } = await axios.delete(`https://mindspeak.onrender.com/api/v1/post/${postId}`, {
+        const { data } = await axios.delete(`${BASE_URL}/api/v1/post/${postId}`, {
             headers: {
                 Authorization: `Bearer ${token}`,
             },

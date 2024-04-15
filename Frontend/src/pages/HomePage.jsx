@@ -22,7 +22,7 @@ const HomePage = () => {
             })
             .catch((error) => {
                 setLoading(false);
-                alert(error);
+                alert("Fetching data from server might take approx 60 seconds");
             });
     }, []);
 
