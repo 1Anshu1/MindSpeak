@@ -1,10 +1,7 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
-
-import Header from "../components/Header";
 import { registerAction } from "../redux/features/userSlice";
-import OAuth from "../components/OAuth";
 import Layout from "../components/Layout";
 
 const Register = () => {
