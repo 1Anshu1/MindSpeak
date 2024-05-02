@@ -9,6 +9,7 @@ export const registerAction = createAsyncThunk("user/register", async (payload, 
         const { data } = await axios.post(`${BASE_URL}/api/v1/auth/register`, payload);
 
         localStorage.setItem("blog-user", JSON.stringify(data.user));
+        localStorage.setItem("blog-token", JSON.stringify(data.token));
         return data.user;
     } catch (error) {
         if (!error.response) {

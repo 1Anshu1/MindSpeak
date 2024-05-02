@@ -108,7 +108,7 @@ const ArticleDetail = () => {
                     </div>
                 )}
 
-                <div className="shadow-2xl px-5 rounded-lg lg:mx-5 lg:h-fit py-2">
+                <div className="shadow-2xl px-5 rounded-lg lg:mx-5 lg:h-fit py-2 lg:basis-[30%]">
                     {/* Suggested Article */}
                     <h2 className="font-bold text-2xl my-5">Latest Article</h2>
                     <div className="sm:flex sm:flex-wrap lg:flex-nowrap lg:flex-col ">
